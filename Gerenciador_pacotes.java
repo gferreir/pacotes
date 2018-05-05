@@ -11,5 +11,8 @@ public class Gerenciador_pacotes {
 	public void setDestribuição(String destribuição) {
 		this.destribuição = destribuição;
 	}
-
+	
+	public void imprime() {
+		System.out.println(destribuição);
+	}
 }
