@@ -15,4 +15,8 @@ public class Gerenciador_pacotes {
 	public void imprime() {
 		System.out.println(destribuição);
 	}
+	
+	public void recebe() {
+		System.out.println("Entre com a distribuição linux: ");	
+	}
 }
