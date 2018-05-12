@@ -4,7 +4,6 @@ public class Gerenc_pac_ubuntu extends Gerenciador_pacotes {
 
 	public Gerenc_pac_ubuntu() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 }
