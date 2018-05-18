@@ -1,19 +1,29 @@
-package pacotes;
+//package pacotes;
+
+import java.io.FileWriter;
+import java.io.PrintWriter;
 
 public class Gerenciador_pacotes {
 	
-	private String destribuição;
+	private String destribuicao;
+	private String nome="/suedbonitinho/instalador"+destribucao+".sh";
+	
+	FileWriter arquivo = new FileWriter(nome);
 
-	public String getDestribuição() {
-		return destribuição;
+	public void criaArquivo(){
+		
 	}
 
-	public void setDestribuição(String destribuição) {
-		this.destribuição = destribuição;
+	public String getDestribuicao() {
+		return destribuicao;
+	}
+
+	public void setDestribuicao(String destribuicao) {
+		this.destribuicao = destribuicao;
 	}
 	
 	public void imprime() {
-		System.out.println(destribuição);
+		System.out.println(destribuicao);
 	}
 	
 	public void recebe() {
