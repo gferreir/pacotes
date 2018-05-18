@@ -7,7 +7,9 @@ public class Main {
 	public static void main(String[] args) {
 		
 		Gerenciador_pacotes gPacotes = new Gerenciador_pacotes();
-		gPacotes.setDestribuicao("Fedora");
+		
+		gPacotes.imprime();
+		
 		try {
 			gPacotes.criaArquivo();
 		}catch(IOException ex) {

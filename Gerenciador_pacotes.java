@@ -8,7 +8,11 @@ public class Gerenciador_pacotes {
 
 	private String destribuicao;
 	private String nome;
-
+	
+	public Gerenciador_pacotes() {
+		destribuicao = System.getProperty("os.version");
+	}
+	
 	public void criaArquivo()throws IOException{
 		nome="instalador" + destribuicao + ".sh"; 
 
