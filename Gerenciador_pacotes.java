@@ -6,15 +6,15 @@ import java.io.IOException;
 
 public class Gerenciador_pacotes {
 
-	private String destribuicao;
+	private String distribuicao;
 	private String nome;
 	
 	public Gerenciador_pacotes() {
-		destribuicao = System.getProperty("os.version");
+		distribuicao = System.getProperty("os.version");
 	}
 	
 	public void criaArquivo()throws IOException{
-		nome="instalador" + destribuicao + ".sh"; 
+		nome="instalador" + distribuicao + ".sh"; 
 
 		FileWriter arquivo = new FileWriter(nome);
 
@@ -25,19 +25,19 @@ public class Gerenciador_pacotes {
 		gravaArquivo.close();
 	}
 
-	public String getDestribuicao() {
-		return destribuicao;
+	public String getDistribuicao() {
+		return distribuicao;
 	}
 
-	public void setDestribuicao(String destribuicao) {
-		this.destribuicao = destribuicao;
+	public void setDistribuicao(String distribuicao) {
+		this.distribuicao = distribuicao;
 	}
 
 	public void imprime() {
-		System.out.println(destribuicao);
+		System.out.println(distribuicao);
 	}
-
-	public void recebe() {
-		System.out.println("Entre com a distribuição linux: ");	
+	
+	public void geraContexto() {
+		
 	}
 }
