@@ -8,8 +8,6 @@ public class Main {
 		
 		Gerenciador_pacotes gPacotes = new Gerenciador_pacotes();
 		
-		gPacotes.imprime();
-		
 		try {
 			gPacotes.criaArquivo();
 		}catch(IOException ex) {
