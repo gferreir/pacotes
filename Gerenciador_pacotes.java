@@ -10,30 +10,39 @@ public class Gerenciador_pacotes {
 
 	private String distribuicao;
 	private String nome;
-	private String[] b;
-	private String a;
-	
-	String a = System.getProperty("os.version");
-    String[] b = a.split("\\.");
-    System.out.println(b[b.length-2]);
 	
 	public Gerenciador_pacotes() {
 		distribuicao = System.getProperty("os.version");
 		String[] b = distribuicao.split("\\.");
+		distribuicao = b[b.length-2];
+	}
+	
+	public String geraContexto() {
+		
+		switch(distribuicao) {
+		
+			case "fc26":
+			case "fc27":
+			case "fc28":
+				Gerenc_pac_fedora fedora = new Gerenc_pac_fedora();
+				return fedora.geraContextoFedora();
+		}
+		return null;
 	}
 	
 	public void criaArquivo()throws IOException{
-		nome = "instalador" + distribuicao + ".sh"; 
+		nome = "instalador-" + distribuicao + ".sh"; 
 
 		FileWriter arquivo = new FileWriter(nome);
 
 		PrintWriter gravaArquivo = new PrintWriter(arquivo);
-
-		gravaArquivo.printf("Hello World!");
-		public String getB() {
-			return b;
-		}
+		
+		gravaArquivo.printf(geraContexto());
+		
+		Runtime.getRuntime().exec("chmod u+x " + nome);
+		
 		gravaArquivo.close();
+		arquivo.close();
 	}
 
 	public String getDistribuicao() {
@@ -43,20 +52,5 @@ public class Gerenciador_pacotes {
 	public void setDistribuicao(String distribuicao) {
 		this.distribuicao = distribuicao;
 	}
-
-	public String getA() {
-		
-	}
 	
-	public String getB() {
-		return b;
-	}
-	
-	public void setB(String b) {
-		this.b = b 
-	}
-	
-	public void geraContexto() {
-		
-	}
 }
