@@ -14,7 +14,7 @@ public class Gerenciador_pacotes {
 	public Gerenciador_pacotes() {
 		distribuicao = System.getProperty("os.version");
 		String[] b = distribuicao.split("\\.");
-		distribuicao = b[b.length-2];
+		distribuicao = (b[b.length-2]);
 	}
 	
 	public String geraContexto() {
